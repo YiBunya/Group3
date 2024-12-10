@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="../../assets/img/logo/Pruttikar_Logo2.png">
+        <title>Pruttika | Vendor Recruitment Details</title>
+        <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+        <link rel="stylesheet" href="../../assets/css/style.css" />
+        <link rel="stylesheet"
+            href="../../assets/lib/bootstrap-icon/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../assets/css/organizer.css" />
+    </head>
+
+    <body>
+        <header class="border px-1" id="header">
+            <div class="container-fluid px-4">
+                <nav class="d-flex align-items-center justify-content-between">
+                    <div class="logo">
+                        <a href="../homepage.html">
+                            <img
+                                src="../../assets/img/logo/Prutika_Logo_text(2).png"
+                                alt>
+                        </a>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="#"
+                            class="dropdown-toggle fs-3 text-brand d-flex align-items-center"
+                            role="button"
+                            id="accountDropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <!-- <i class="bi bi-person-circle"></i> -->
+                            <div class="userImgPf-wrapper">
+                                <img id="userImgPf" src="http://mps2.chandalen.dev/storage/avatars/no_photo.jpg" alt="pfp">
+                            </div>
+                            <!-- User Icon -->
+                            <span class="ps-1 fs-6" id="userEmail"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item"
+                                    href="../homepage.html">Switch to
+                                    Attending</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class>
+                <div class="d-flex">
+                    <nav class="shadow sidebar">
+                        <ul>
+                            <li>
+                                <a href="event.html" class="active">
+                                    <i class="fas fa-menorah"></i>
+                                    <span class="nav-item">Event</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="request-ticket.html" c>
+                                    <i class="fa-solid fa-ticket"></i>
+                                    <span class="nav-item">Request Ticket</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="check-in-ticket.html">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                    <span class="nav-item">Check-in
+                                        Ticket</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="w-100 p-4">
+                        <section class>
+                            <div class="container-fluid">
+                                <div class="d-flex align-items-center">
+                                    <button type="button"
+                                        class="btn border-0 ps-0"
+                                        onclick="history.back()">
+                                        <i
+                                            class="fa-solid fa-angle-left fs-2"></i>
+                                    </button>
+                                    <h2>Vendor Recruitment</h2>
+                                    
+                                </div>
+                                <div
+                                        class="w-100 mt-4 justify-content-center" style="display: flex;"
+                                        id="loading">
+                                        <div
+                                            class="spinner-border text-secondary"
+                                            role="status">
+                                            <span
+                                                class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                <div id="content" style="display: none;">
+                                    <div
+                                    class="my-4 d-flex w-100 justify-content-between align-content-center">
+                                    <div
+                                        class>
+                                        <h3 id="vendor-title"></h3>
+                                        <div class="d-flex flex-column">
+
+                                            <div
+                                                class="d-inline-flex align-items-center">
+                                                <i
+                                                    class="bi bi-calendar-event me-2"></i>
+                                                <span id="start-end-date"></span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <h5 class="mb-4">Vendor Request</h5>
+                                <table
+                                    class="table table-borderless align-middle table-hover ticket-order">
+                                    <thead class>
+                                        <tr class="border-bottom">
+                                            <th scope="col">#</th>
+                                            <th scope="col">Profile</th>
+                                            <th scope="col">Name</th>
+                                            <th
+                                                scope="col">Email</th>
+                                            <th scope="col">Applied At</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="vendor-request-tbody">
+                                        <!-- First Event Row -->
+                                        <tr
+                                            class="">
+                                            <td colspan="6" >
+                                                <div class="d-flex justify-content-center mt-3">
+                                                    <div
+                                                    class="spinner-border text-secondary"
+                                                    role="status">
+                                                    <span
+                                                        class="visually-hidden">Loading...</span>
+                                                </div>
+                                                </div>
+                                                
+                                            </td>
+
+                                        </tr>
+
+                                        <!-- Repeat the structure for the second event -->
+                                    </tbody>
+                                </table>
+                                </div>
+
+                            </div>
+                        </section>
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+        <script src="../../assets/lib/momentjs/moment.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script>
+        </script>
+        <script src="../../assets/js/ultilities.js"></script>
+        <script src="../../assets/js/authentication.js"></script>
+        <script src="../../assets/js/header.js"></script>
+        <script src="../../assets/js/footer.js"></script>
+
+        <script
+            src="../../assets/js/organizer/vendor-recruitment-detail.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruttika | Register</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/mainstyle.css">
+    <link rel="stylesheet"
+      href="../../assets/lib/bootstrap-icon/bootstrap-icons.css">
+    <link rel="icon" type="image/jpg"
+      href="../../assets/img/logo/Pruttikar_Logo2.png">
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div class="container py-5">
+          <div class="logo mb-3">
+            <a href="../../index.html">
+              <img src="../../assets/img/Prutika_Logo_text(2).png" alt="logo"
+              style="width: 150px;">
+            </a>
+          </div>
+          <div class="card d-flex card-glassbg px-3">
+            <div class="row">
+              <div
+                class="col-6 d-flex justify-content-center align-items-center">
+                <div class="logo">
+                  <img src="../../assets/img/img-login.png" alt
+                    style="width: 100%;">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <h3 class="text-brand mt-4">Register</h3>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control form-control-sm"
+                    id="username" placeholder="Full Name" required>
+                  <label for="username">Full Name*</label>
+                  <div class="invalid-feedback" id="username-error"
+                    style="display: none;">
+                    Please enter a valid name (letters only, no numbers).
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3 mt-3">
+                  <input type="email" class="form-control form-control-sm"
+                    id="email" placeholder="name@example.com" required>
+                  <label for="email">Email address*</label>
+                  <div class="invalid-feedback" id="email-error"
+                    style="display: none;">
+                    Please enter a valid email address (e.g., name@example.com).
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3 d-grid position-relative">
+                  <input type="password" class="form-control" id="password"
+                    placeholder="Password" required>
+                  <label for="password">Password*</label>
+                  <i
+                    class="bi bi-eye-slash-fill text-brand position-absolute bg-white px-1"
+                    id="togglePassword"
+                    style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                  <div class="invalid-feedback" id="password-error"
+                    style="display: none;">
+                    Password must be at least 8 characters, include one
+                    uppercase letter, one lowercase letter, and one number.
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3 d-grid position-relative">
+                  <input type="password" class="form-control"
+                    id="confirmPassword" placeholder="Confirm Password"
+                    required>
+                  <label for="confirmPassword">Confirm Password*</label>
+                  <i
+                    class="bi bi-eye-slash-fill text-brand position-absolute bg-white ps-1 pe-1"
+                    id="toggleConfirmPassword"
+                    style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                  <div class="invalid-feedback" id="confirm-password-error"
+                    style="display: none;">
+                    Passwords do not match.
+                  </div>
+                </div>
+
+                <div class="d-grid d-flex mb-3">
+                  <div class="line"></div>
+                  <p class="text-or p-2">OR</p>
+                  <div class="line"></div>
+                </div>
+
+                <div class="mb-3">
+                  <button
+                    class="btn btn-facebook btn-outline-brand  mb-2 w-100">
+                    <i class="bi bi-facebook social-icon fs-5 me-3"></i> Sign Up
+                    with Facebook
+                  </button>
+                </div>
+
+                <div class="mb-3">
+                  <button class="btn btn-google btn-outline-brand mb-3 w-100">
+                    <i class="bi bi-google social-icon fs-5 me-3"></i> Sign up
+                    with Google
+                  </button>
+                </div>
+
+                <div class="d-grid gap-2 mb-3">
+                  <button class="btn btn-brand" type="button" id="Sign-up">Sign
+                    Up</button>
+                </div>
+
+                <div class="text-center">
+                  <p>Have an Account? <a class="text-signup"
+                      href="login.html">Log In</a></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="../../assets/js/authentication.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/ultilities.js"></script>
+
+    <script src="../../assets/js/sign-up.js"></script>
+
+  </body>
+
+</html>

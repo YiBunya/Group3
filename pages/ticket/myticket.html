@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="../../assets/img/logo/Pruttikar_Logo2.png">
+        <title>Pruttika | Owned Ticket</title>
+        <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet"
+            href="../../assets/lib/bootstrap-icon/bootstrap-icons.css">
+        <link rel="stylesheet" href="../../assets/css/organizer.css">
+
+    </head>
+
+    <body>
+        <header class="border" id="header">
+            <div class="container">
+                <nav class="d-flex align-items-center justify-content-between">
+                    <div class="logo">
+                        <a href="../homepage.html">
+                            <img src="../../assets/img/logo/Prutika_Logo_text(2).png" alt>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center w-25 position-relative ">
+                        <i class="fa-solid fa-magnifying-glass text-brand fs-6 position-absolute"></i>
+                        <input type="text" class="form-control search-bar ps-5 w-100 " id="searchEvent"
+                            placeholder="Search Event " />
+                        <button class="btn-pink text-white"><i
+                                class="fa-solid fa-magnifying-glass text-brand fs-6"></i></button>
+                        <ul class="search-dropdown position-absolute" id="search-dropdown">
+    
+                        </ul>
+                    </div>
+                    <div class="action-btn d-flex">
+                        <button class="btn-outline-pink ms-3" data-bs-toggle="modal" data-bs-target="#createPostModal"><i
+                                class="fa-solid fa-plus text-brand"></i> Create
+                            a
+                            post</button>
+                        <a href="#" class=" btn-outline-pink ms-3" role="button" id="browseDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Browse <i class="fa-solid fa-caret-down text-brand"></i>
+                            <!-- User Icon -->
+                        </a>
+                        <a href="myticket.html" class="btn-outline-pink ms-3 d-flex align-items-center"><i
+                                class="fa-solid fa-ticket pe-1 text-brand"></i>My
+                            Ticket</a>
+    
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="browseDropdown">
+                            <li><a class="dropdown-item" href="../browse/browse-event.html">Browse
+                                    events</a></li>
+                            <li><a class="dropdown-item" href="../browse/browse-recruitment.html">Browse
+                                    vendor recruitments</a></li>
+                            <li><a class="dropdown-item" href="../browse/browse-vendor.html">Browse
+                                    vendor services</a></li>
+    
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle fs-3 text-brand d-flex align-items-center" role="button"
+                            id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <!-- <i class="bi bi-person-circle"></i> -->
+                            <div class="userImgPf-wrapper">
+                                <img id="userImgPf" src="http://mps2.chandalen.dev/storage/avatars/no_photo.jpg" alt="pfp">
+                            </div>
+                            <!-- User Icon -->
+                            <span class="ps-1" id="userEmail"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="../organizer/event.html">Manage
+                                    as
+                                    organizer</a></li>
+                            <li><a class="dropdown-item" href="../vendor/vendor-business.html">Manage as
+                                    vendor</a></li>
+                            <li><a class="dropdown-item" href="../browse/wishlist.html">Wishlist</a></li>
+                            <li><a class="dropdown-item" href="../authentication/accountsetting.html">Account
+                                    Setting</a></li>
+    
+                            <li><a class="dropdown-item border-top" href="javascript:void(0);" id="btn-logout">Log
+                                    out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- Modal -->
+        <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border border-0">
+                        <h1 class="modal-title fs-5" id="createPostModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="text-center">What do you want to create ?</h5>
+                        <div class="row p-3">
+                            <div class="col-4">
+                                <div class="post-choice d-flex justify-content-center flex-column align-items-center p-3 border rounded-4"
+                                    onclick="goCreatePost('event')">
+                                    <div class="icon">
+                                        <i class="fs-4 text-brand fa-regular fa-calendar-days"></i>
+                                    </div>
+                                    <h6 class="fw-bold">
+                                        Create an event
+                                    </h6>
+                                    <span class="post-choice-detail text-center text-secondary">
+                                        Create an event which will be publiced on website for free.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="post-choice d-flex justify-content-center flex-column align-items-center p-3 border rounded-4"
+                                    onclick="goCreatePost('recruit')">
+                                    <div class="icon">
+                                        <i class="fs-4 text-brand fa-solid fa-magnifying-glass-dollar"></i>
+                                    </div>
+                                    <h6 class="fw-bold">
+                                        Create a recuitment
+                                    </h6>
+                                    <span class="post-choice-detail text-center text-secondary">
+                                        Post what you need and recuit vendors for your events organising.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="post-choice d-flex justify-content-center flex-column align-items-center p-3 border rounded-4"
+                                    onclick="goCreatePost('business')">
+                                    <a href=""></a>
+                                    <div class="icon">
+                                        <i class="fs-4 text-brand fa-solid fa-shop"></i>
+                                    </div>
+                                    <h6 class="fw-bold">
+                                        Create a business post
+                                    </h6>
+                                    <span class="post-choice-detail text-center text-secondary">
+                                        Promote yourself and your businesses as an event service provider
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="min-vh-100">
+            <div class="container">
+                <div class="d-flex">
+
+                    <section class="p-4 w-100">
+                        <div class>
+                            <h2>My Ticket</h2>
+                        </div>
+
+                        <ul class="nav nav-underline my-3" id="myTab"
+                            role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a href="myticket.html" class="nav-link active"
+                                    id="events-tab">Owned Tickets</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="my-request-ticket.html"
+                                    class="nav-link text-dark">Requested
+                                    Tickets</a>
+                            </li>
+                        </ul>
+
+                        <!-- <div>
+                            <select name id class="form-select my-4"
+                                id="select-filter" style="width: 120px;">
+                                <option value="all">All</option>
+                                <option value="approved">Approved</option>
+                                <option value="pending">Pending</option>
+                                <option value="rejected">Rejected</option>
+                                <option value="expired">Expired</option>
+                            </select>
+                        </div> -->
+
+                        <div class="my-4">
+                            <div class="my-4">
+                                <table
+                                    class="table table-borderless align-middle">
+                                    <thead class>
+                                        <tr class="border-bottom">
+                                            <th scope="col">Event</th>
+                                            <th
+                                                scope="col">
+                                                Status</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Expired</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ticket-tbody">
+                                       
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </main>
+        <div
+            class="modal fade"
+            id="exampleModalToggle-1"
+            aria-hidden="true"
+            aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
+            <div
+                class="modal-dialog modal-dialog-centered modal-xl">
+                <div
+                    class="modal-content">
+                    <div
+                        class="modal-header">
+                        <h4>View Detail</h4>
+                        <button
+                            type="button"
+                            class="btn-close btn-lg"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div
+                        class="modal-body ">
+                        <div class="container-fluid">
+                            <div class="row gy-5 ticket-modal">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="mt-5"></footer>
+        <script src="../../assets/js/footer.js"></script>
+        <script src="../../assets/lib/momentjs/moment.min.js"></script>
+        <script src="../../assets/js/ultilities.js"></script>
+        <script src="../../assets/js/authentication.js"></script>
+        <script src="../../assets/js/header.js"></script>
+        <script src="../../assets/js/owned-ticket.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            function showEventDetail(id) {
+                sessionStorage.setItem("itemID", id);
+                location.href = "../browse/event-detail.html";
+            }
+        </script>
+    </body>
+
+</html>

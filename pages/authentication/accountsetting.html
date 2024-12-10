@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruttika | Account Setting</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/mainstyle.css">
+    <link rel="stylesheet" href="../../assets/css/lim_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet"
+      href="../../assets/lib/bootstrap-icon/bootstrap-icons.css">
+      <!-- <link rel="stylesheet" href="../../assets/css/lim_style.css"> -->
+      <link rel="icon" type="image/jpg" href="../../assets/img/logo/Pruttikar_Logo2.png">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <header class="border" id="header">
+      <div class="container">
+          <nav class="d-flex align-items-center justify-content-between">
+              <div class="logo">
+                  <a href="../homepage.html">
+                      <img src="../../assets/img/logo/Prutika_Logo_text(2).png" alt>
+                  </a>
+              </div>
+              <div class="d-flex align-items-center w-25 position-relative ">
+                  <i class="fa-solid fa-magnifying-glass text-brand fs-6 position-absolute"></i>
+                  <input type="text" class="form-control search-bar ps-5 w-100 " id="searchEvent"
+                      placeholder="Search Event " />
+                  <button class="btn-pink text-white"><i
+                          class="fa-solid fa-magnifying-glass text-brand fs-6"></i></button>
+                  <ul class="search-dropdown position-absolute" id="search-dropdown">
+
+                  </ul>
+              </div>
+              <div class="action-btn d-flex">
+                  <button class="btn-outline-pink ms-3" data-bs-toggle="modal" data-bs-target="#createPostModal"><i
+                          class="fa-solid fa-plus text-brand"></i> Create
+                      a
+                      post</button>
+                  <a href="#" class=" btn-outline-pink ms-3" role="button" id="browseDropdown"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Browse <i class="fa-solid fa-caret-down text-brand"></i>
+                      <!-- User Icon -->
+                  </a>
+                  <a href="../ticket/myticket.html" id="my-ticket-link" class="btn-outline-pink ms-3 d-flex align-items-center"><i
+                          class="fa-solid fa-ticket pe-1 text-brand"></i>My
+                      Ticket</a>
+
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="browseDropdown">
+                      <li><a class="dropdown-item" href="../browse/browse-event.html">Browse
+                              events</a></li>
+                      <li><a class="dropdown-item" href="../browse/browse-recruitment.html">Browse
+                              vendor recruitments</a></li>
+                      <li><a class="dropdown-item" href="../browse/browse-vendor.html">Browse
+                              vendor services</a></li>
+
+                  </ul>
+              </div>
+              <div class="dropdown">
+                  <a href="#" class="dropdown-toggle fs-3 text-brand d-flex align-items-center" role="button"
+                      id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                      <!-- <i class="bi bi-person-circle"></i> -->
+                      <div class="userImgPf-wrapper">
+                        <img id="userImgPf" src="http://mps2.chandalen.dev/storage/avatars/no_photo.jpg" alt="pfp">
+                    </div>
+                      <!-- User Icon -->
+                      <span class="ps-1" id="userEmail"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                      <li><a class="dropdown-item" href="../organizer/event.html">Manage
+                              as
+                              organizer</a></li>
+                      <li><a class="dropdown-item" href="../vendor/vendor-business.html">Manage as
+                              vendor</a></li>
+                      <li><a class="dropdown-item" href="../browse/wishlist.html">Wishlist</a></li>
+                      <li><a class="dropdown-item" href="../authentication/accountsetting.html">Account
+                              Setting</a></li>
+
+                      <li><a class="dropdown-item border-top" href="javascript:void(0);" id="btn-logout">Log
+                              out</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+  </header>
+  <!-- Modal -->
+  <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header border border-0">
+                  <h1 class="modal-title fs-5" id="createPostModalLabel"></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <h5 class="text-center">What do you want to create ?</h5>
+                  <div class="row p-3">
+                      <div class="col-4">
+                          <div class="post-choice d-flex justify-content-center flex-column align-items-center p-3 border rounded-4"
+                              onclick="goCreatePost('event')">
+                              <div class="icon">
+                                  <i class="fs-4 text-brand fa-regular fa-calendar-days"></i>
+                              </div>
+                              <h6 class="fw-bold">
+                                  Create an event
+                              </h6>
+                              <span class="post-choice-detail text-center text-secondary">
+                                  Create an event which will be publiced on website for free.
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-4">
+                          <div class="post-choice d-flex justify-content-center flex-column align-items-center p-3 border rounded-4"
+                              onclick="goCreatePost('recruit')">
+                              <div class="icon">
+                                  <i class="fs-4 text-brand fa-solid fa-magnifying-glass-dollar"></i>
+                              </div>
+                              <h6 class="fw-bold">
+                                  Create a recuitment
+                              </h6>
+                              <span class="post-choice-detail text-center text-secondary">
+                                  Post what you need and recuit vendors for your events organising.
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-4">
+                          <div class="post-choice d-flex justify-content-center flex-column align-items-center p-3 border rounded-4"
+                              onclick="goCreatePost('business')">
+                              <a href=""></a>
+                              <div class="icon">
+                                  <i class="fs-4 text-brand fa-solid fa-shop"></i>
+                              </div>
+                              <h6 class="fw-bold">
+                                  Create a business post
+                              </h6>
+                              <span class="post-choice-detail text-center text-secondary">
+                                  Promote yourself and your businesses as an event service provider
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <main>
+      <section>
+        <div class="container py-5">
+          <div class="row">
+            <!-- Sidebar Menu -->
+            <div class="col-3">
+              <div class="card card-glassbg">
+                <div class="text-start">
+                  <div
+                    class="nav flex-column nav-pills rounded-3 overflow-hidden p-0"
+                    id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link tab-hover active border-0"
+                      id="v-pills-profile-tab" data-bs-toggle="pill"
+                      data-bs-target="#v-pills-profile" type="button" role="tab"
+                      aria-controls="v-pills-profile"
+                      aria-selected="true">
+                      <i class="bi bi-person-fill me-3 fs-4"></i>Profile Setting
+                    </button>
+                    <button class="nav-link tab-hover border-0"
+                      id="v-pills-changepassword-tab" data-bs-toggle="pill"
+                      data-bs-target="#v-pills-changepassword" type="button"
+                      role="tab"
+                      aria-controls="v-pills-changepassword"
+                      aria-selected="false">
+                      <i class="bi bi-lock me-3 fs-4"></i>Change Password
+                    </button>
+                    <button class="nav-link tab-hover border-0"
+                      id="v-pills-delete-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#v-pills-deleteAccount" type="button"
+                      role="tab"
+                      aria-controls="v-pills-deleteAccount"
+                      aria-selected="false">
+                      <i class="bi bi-person-x me-3 fs-4"></i>Delete Account
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="col-9">
+              <div class="card card-glassbg">
+                <div class="tab-content" id="v-pills-tabContent">
+                  <!-- Profile Tab -->
+                  <div class="tab-pane fade show active" id="v-pills-profile"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-profile-tab">
+                    <div class="user-profile p-4">
+                      <h4>Profile Setting</h4>
+                      <div
+                        class="d-flex flex-column align-items-center justify-content-center">
+                        <div
+                          class="profile-setting position-relative border-brand">
+                          <a href="javascript:void(0);" class
+                            onclick="profilePic();">
+                            <img src="../../assets/img/white-image.png"
+                              class="position-relative w-100 h-100 object-fit-cover"
+                              alt="Profile Picture" id="profile-pic">
+                          </a>
+                          <input type="file" id="profilePicture" class="d-none"
+                            accept="image/*"
+                            onchange="uploadProfileImage(event)">
+                          <div class="overlay-camera-image position-absolute">
+                            <i class="bi bi-camera fs-4"></i>
+                          </div>
+                        </div>
+                        <div class="mt-3"><label for="profilePicture"
+                            class="btn btn-brand rounded-3 lblPfp" type="button"
+                            onclick>Update Profile</label>
+                          <button id="btn-delete-profile"
+                            class="btn btn-outline-brand rounded-3 ms-2"
+                            type="button"
+                            onclick="DeleteProfile(this);">Delete</button></div>
+                      </div>
+                    </div>
+
+                    <form class="px-4 needs-validation" id="profileFormInfo"
+                      novalidate>
+                      <div class="row">
+
+                        <div class="col-12">
+                          <div class="form-floating mb-3">
+                            <input type="text"
+                              class="form-control form-control-sm" id="fullname"
+                              placeholder="Full Name"
+                              required>
+                            <label for="fullname">Full Name*</label>
+                            <div id="fullname-info-err"
+                              class="invalid-feedback">Full name is required
+                              and must contain only letters.</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control form-control-sm"
+                          id="login-email"
+                          placeholder="name@example.com" required>
+                        <label for="login-email">Email address*</label>
+                        <div id="email-info-err" class="invalid-feedback">Please
+                          provide a valid
+                          email (e.g., name@example.com).</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-floating mb-3">
+                            <input type="tel"
+                              class="form-control form-control-sm"
+                              id="phonenumber"
+                              placeholder="Phone Number" required>
+                            <label for="phonenumber">Phone Number*</label>
+                            <div id="phone-info-err"
+                              class="invalid-feedback">Invalid Phone
+                              Number.</div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-floating mb-3">
+                            <input type="date"
+                              class="form-control form-control-sm"
+                              id="datepicker" required>
+                            <label for="datepicker">Date of Birth*</label>
+                            <div id="dob-info-err"
+                              class="invalid-feedback">Invalid Date of
+                              birth.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <button id="btn-update-info" type="submit"
+                        class="btn btn-brand mb-4"
+                        onclick="updateinfo(event)"
+                        style="width: 100%;">Save Changes</button>
+                    </form>
+                  </div>
+
+                  <!-- Change Password Tab -->
+                  <div class="tab-pane fade p-4" id="v-pills-changepassword"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-changepassword-tab">
+                    <h4>Change Password</h4>
+                    <div class="line mb-4" style="width: 100%;"></div>
+                    <form id="passwordForm">
+                      <div class="form-floating mb-3 d-grid position-relative">
+                        <input type="password" class="form-control"
+                          id="currentPassword" placeholder="Current Password"
+                          required>
+                        <label for="currentPassword">Current Password</label>
+                        <i
+                          class="bi bi-eye-slash-fill text-brand position-absolute"
+                          id="toggleCurrentPassword"
+                          style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                        <div class="invalid-feedback"
+                          id="currentPassErr">Password must be at least 8
+                          characters, include one
+                          uppercase letter, one lowercase letter, and one
+                          number.</div>
+                      </div>
+                      <div class="form-floating mb-3 d-grid position-relative">
+                        <input type="password" class="form-control"
+                          id="newPassword" placeholder="New Password" required>
+                        <label for="newPassword">New Password</label>
+                        <i
+                          class="bi bi-eye-slash-fill text-brand position-absolute"
+                          id="toggleNewPassword"
+                          style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                        <div class="invalid-feedback" id="newPassErr">Password
+                          must be at least 8 characters, include one
+                          uppercase letter, one lowercase letter, and one
+                          number.</div>
+                      </div>
+                      <div class="form-floating mb-3 d-grid position-relative">
+                        <input type="password" class="form-control"
+                          id="confirmNewPassword"
+                          placeholder="Confirm New Password"
+                          required>
+                        <i
+                          class="bi bi-eye-slash-fill text-brand position-absolute"
+                          id="toggleConfirmNewPassword"
+                          style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                        <label for="confirmNewPassword">Confirm New
+                          Password</label>
+
+                        <div class="invalid-feedback"
+                          id="confirmNewPassErr">Password must be at least 8
+                          characters, include one
+                          uppercase letter, one lowercase letter, and one
+                          number.</div>
+                      </div>
+                      <button type="button" id="btn-change-pass"
+                        class="btn btn-brand mb-3"
+                        onclick="updatePassword(event)">Confirm</button>
+                    </form>
+                    <!-- <button type="button" class="btn btn-brand btn-lg mt-4" data-bs-toggle="modal"
+                    data-bs-target="#changePasswordModal">Change</button> -->
+                  </div>
+
+                  <!-- Delete Account Tab -->
+                  <div class="tab-pane fade p-4" id="v-pills-deleteAccount"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-delete-tab">
+                    <h4>Delete Account</h4>
+                    <div class="line mb-3" style="width: 100%;"></div>
+                    <h6>Deleting your account will remove all information from
+                      our database. <br><br>This action cannot be
+                      undone.</h6>
+                    <div class="form-floating my-4 d-grid position-relative">
+                      <input type="password" class="form-control"
+                        id="d-password" placeholder="Current Password" required>
+                      <label for="d-password">Current Password</label>
+                      <i
+                        class="bi bi-eye-slash-fill text-brand position-absolute"
+                        id="toggleDPassword"
+                        style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                      <div class="invalid-feedback" id="dPassErr">Password must
+                        be at least 8
+                        characters, include one
+                        uppercase letter, one lowercase letter, and one
+                        number.</div>
+                    </div>
+                    <button type="button" id="btn-delete-account"
+                     
+                      class="btn btn-brand">Delete</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+          <div class="row py-5">
+              <div class="col-4">
+                  <a href="./index.html">
+                      <img
+                          src="../../assets/img/Prutika_Logo_text(2).png"
+                          alt class="logo">
+                  </a>
+                  <div class="information pe-5">
+                      <p>"Your seamless platform for event management, where creativity meets efficiency. We simplify planning, coordinate every detail, and bring your vision to life for unforgettable experiences that inspire.”</p>
+                  </div>
+              </div>
+              <div
+                  class="col-4 contact-info d-flex flex-column justify-content-end align-items-start ps-5">
+                  <p>Tel: +855-12-123-456</p>
+                  <p><a href="mailto:goole.gmail.com">Email:
+                          pruttikaKH@gmail.com</a></p>
+                  <div class="social-media">
+                      <a href><i class="fa-brands fa-facebook"></i></a>
+                      <a href><i
+                              class="fa-brands fa-square-x-twitter"></i></a>
+                      <a href><i class="fa-brands fa-telegram"></i></a>
+                      <a href><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="col-4 quick-link pt-3">
+                  <h4 class="py-4 text-brand">Quick Links</h4>
+                  <div class="d-flex">
+                      <div class="d-flex flex-column w-50 pe-5">
+                          <a href>Contact us</a>
+                          <a href>Events</a>
+                          <a href>About us</a>
+                      </div>
+                      <div class="d-flex flex-column w-50 pe-5">
+                          <a href>Our Policy</a>
+                          <a href>Our Team</a>
+                          <a href>FAQs</a>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </footer>
+
+    <!-- Change Password Modal -->
+    <!-- <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="changePasswordModalLabel">
+            <div class="logo">
+              <img src="/assets/img/Pruttikar_Text_Logo1.png" alt="Logo" style="width: 150px;">
+            </div>
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="passwordForm">
+            <div class="form-floating mb-3 d-grid position-relative">
+              <input type="password" class="form-control" id="currentPassword" placeholder="Current Password" required>
+              <label for="currentPassword">Current Password</label>
+              <i class="bi bi-eye-slash-fill text-brand position-absolute" id="toggleCurrentPassword"
+                style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+            </div>
+            <div class="form-floating mb-3 d-grid position-relative">
+              <input type="password" class="form-control" id="newPassword" placeholder="New Password" required>
+              <label for="newPassword">New Password</label>
+              <i class="bi bi-eye-slash-fill text-brand position-absolute" id="toggleNewPassword"
+                style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+            </div>
+            <div class="form-floating mb-3 d-grid position-relative">
+              <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm New Password"
+                required>
+              <label for="confirmNewPassword">Confirm New Password</label>
+              <i class="bi bi-eye-slash-fill text-brand position-absolute" id="toggleConfirmNewPassword"
+                style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+            </div>
+            <button type="button" class="btn btn-brand mb-3" onclick="updatePassword(event)">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!-- script for validation -->
+
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/ultilities.js"></script>
+    <script src="../../assets/js/authentication.js"></script>
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/profile.js"></script>
+    <script>
+      function showEventDetail(id) {
+          sessionStorage.setItem("itemID", id);
+          location.href = "../browse/event-detail.html";
+      }
+  </script>
+  </body>
+
+</html>
